@@ -14,6 +14,9 @@ const bundleAnalyzer = withBundleAnalyzer({
 export default withSentryConfig(
   bundleAnalyzer(
     withNextIntlConfig({
+      env: {
+        VERCEL_URL: process.env.VERCEL_URL,
+      },
       async redirects() {
         return [
           {
