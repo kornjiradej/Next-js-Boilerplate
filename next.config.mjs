@@ -15,7 +15,6 @@ export default withSentryConfig(
   bundleAnalyzer(
     withNextIntlConfig({
       env: {
-        VERCEL_URL: process.env.VERCEL_URL,
         NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL,
         CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
         DATABASE_URL: process.env.DATABASE_URL,

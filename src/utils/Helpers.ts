@@ -1,14 +1,10 @@
 export const getBaseUrl = () => {
   if (process.env.NODE_ENV === 'production') {
-    return process.env.NEXT_PUBLIC_VERCEL_URL;
+    return `https://${process.env.NEXT_PUBLIC_URL}`;
   }
 
-  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-    return process.env.NEXT_PUBLIC_VERCEL_URL;
-  }
-
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
+  if (process.env.NEXT_PUBLIC_URL) {
+    return process.env.NEXT_PUBLIC_URL;
   }
 
   return 'http://localhost:3000';
