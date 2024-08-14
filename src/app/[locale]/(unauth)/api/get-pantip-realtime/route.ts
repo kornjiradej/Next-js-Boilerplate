@@ -70,7 +70,11 @@ export async function GET(req: NextRequest) {
 
     const res = await scrapeRealtimeElements(url);
     return NextResponse.json(res, { status: 200 });
-  } catch (err) {
-    return NextResponse.json(err, { status: 500 });
+  } catch (err: any) {
+    const error = {
+      ...err,
+      message: 'Error something ...',
+    };
+    return NextResponse.json(error, { status: 500 });
   }
 }
